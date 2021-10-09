@@ -251,7 +251,7 @@ class guiFuncts:
 		yrBtn=Button(yearFrame,text="Open",width=4)
 		#Entries
 		conts=Frame(cont)
-		contl=Label(conts,text="Chest Content Recording:",font='BOLD')
+		contl=Label(conts,text="Chest Content Recording:",font=('Arial',8,'bold'))
 		famsLabel=Label(conts,text="Familiars:")
 		fams=Entry(conts)
 		fams.insert(0,'0')
@@ -278,7 +278,7 @@ class guiFuncts:
 		visBtn=Button(conts,text="+")
 		#CoolData
 		dataf=Frame(col2)
-		datal=Label(dataf,text="Data:",font='BOLD')
+		datal=Label(dataf,text="Data:",font=('Arial',8,'bold'))
 		datat=Text(dataf,width=25,height=12,state=DISABLED,font=('Arial',10,'normal'))
 		wrfile=Button(dataf,text="Write File")
 		#columns-geom
