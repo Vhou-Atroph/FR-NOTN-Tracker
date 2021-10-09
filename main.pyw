@@ -1,12 +1,21 @@
 from tkinter import *
 import pickle,os
 
+'''
+VERSION 1.2
+
+CONTRIBUTORS:
+-Vhou-Atroph
+'''
+
 #Base
 global window
 global year
 window=Tk()
 window.title("NotN Pytool")
 window.resizable(0,0)
+icon=PhotoImage(file="docs/img/strange-chest.png")
+window.iconphoto(True,icon)
 
 #col1
 col1=Frame(window)
@@ -54,7 +63,7 @@ gthCount.insert(0,'0')
 #dataFrame
 dataFrame=Frame(col2)
 dataLabel=Label(dataFrame,text="Stored Data:",font=('Arial',8,'bold'))
-dataInfo=Text(dataFrame,width=25,height=10,state=DISABLED)
+dataInfo=Text(dataFrame,width=25,height=10,state=DISABLED,font=('Arial',10,'normal'))
 #databtns
 btnFrame=Frame(col2)
 writfil=Button(btnFrame,text="Write File")
@@ -207,7 +216,7 @@ class guiFuncts:
 		#Stats
 		stats=Frame(st)
 		yscroll=Scrollbar(stats)
-		stwindow=Text(stats,width=25,height=10,state=DISABLED,yscrollcommand=yscroll.set)
+		stwindow=Text(stats,width=25,height=10,state=DISABLED,yscrollcommand=yscroll.set,font=('Arial',10,'normal'))
 		yscroll.config(command=stwindow.yview)
 		#Geometry
 		yearFrame.grid(row=0,column=0)
@@ -215,7 +224,7 @@ class guiFuncts:
 		syear.grid(row=0,column=1)
 		yrBtn.grid(row=0,column=2,padx=5)
 		stats.grid(row=1,column=0)
-		stwindow.grid(row=2,column=0)
+		stwindow.grid(row=2,column=0,pady=5)
 		#Do the stat thing
 		def runSt():
 			yr=syear.get()
@@ -223,7 +232,7 @@ class guiFuncts:
 			dat=pickle.load(file)
 			file.close()
 			stwindow.configure(state=NORMAL)
-			stwindow.insert("1.1","Stats for: "+yr+"-\n"+"Coli enemies fought: "+dat['enemies']+"\nChests from Coli: "+dat['colichests']+"\nDrop rate: "+str(int(dat['colichests'])/int(dat['enemies'])*100)+"%\nBaldwin chests: "+dat['baldchests']+"\nSwipp chests: "+dat['swipchests']+"\nAH chests: "+dat['ahchests']+"\nCR chests:"+dat['crosschests']+"\nGathering chests: "+dat['gthchests']+"\n")
+			stwindow.insert("1.1","Stats for year "+yr+":\n"+"Coli enemies fought: "+dat['enemies']+"\nChests from Coli: "+dat['colichests']+"\nDrop rate: "+str(int(dat['colichests'])/int(dat['enemies'])*100)+"%\nBaldwin chests: "+dat['baldchests']+"\nSwipp chests: "+dat['swipchests']+"\nAH chests: "+dat['ahchests']+"\nCR chests:"+dat['crosschests']+"\nGathering chests: "+dat['gthchests']+"\n")
 			stwindow.configure(state=DISABLED)
 		#btn
 		yrBtn.configure(command=runSt)
@@ -270,7 +279,7 @@ class guiFuncts:
 		#CoolData
 		dataf=Frame(col2)
 		datal=Label(dataf,text="Data:",font='BOLD')
-		datat=Text(dataf,width=25,height=12,state=DISABLED)
+		datat=Text(dataf,width=25,height=12,state=DISABLED,font=('Arial',10,'normal'))
 		wrfile=Button(dataf,text="Write File")
 		#columns-geom
 		col1.grid(column=0,row=0)
