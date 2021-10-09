@@ -2,7 +2,7 @@ from tkinter import *
 import pickle,os
 
 '''
-VERSION 1.2
+VERSION 1.2.2
 
 CONTRIBUTORS:
 -Vhou-Atroph
@@ -207,7 +207,7 @@ class guiFuncts:
 	def stw():
 		#Base
 		st=Toplevel(window)
-		st.title("Chest Statistics")
+		st.title("Statistics")
 		#Enter year
 		yearFrame=Frame(st)
 		yrLabel=Label(yearFrame,text="Year: ")
@@ -314,7 +314,7 @@ class guiFuncts:
 		dataf.grid(column=1,padx=8)
 		datal.grid(row=1)
 		datat.grid(row=2)
-		wrfile.grid(row=3)
+		wrfile.grid(row=3,pady=3)
 		#btngoup
 		def famup():
 			val1=fams.get()
