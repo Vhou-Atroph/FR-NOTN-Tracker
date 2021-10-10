@@ -2,7 +2,7 @@ from tkinter import *
 import pickle,os
 
 '''
-VERSION 1.2.2
+VERSION 1.2.3
 
 CONTRIBUTORS:
 -Vhou-Atroph
@@ -208,7 +208,8 @@ class guiFuncts:
 		#Base
 		st=Toplevel(window)
 		st.title("Statistics")
-		#Enter year
+		st.resizable(0,0)
+        #Enter year
 		yearFrame=Frame(st)
 		yrLabel=Label(yearFrame,text="Year: ")
 		syear=Entry(yearFrame)
@@ -241,7 +242,8 @@ class guiFuncts:
 	def contcount():
 		cont=Toplevel(window)
 		cont.title("Chest Content Recording")
-		#columns
+		cont.resizable(0,0)
+        #columns
 		col1=Frame(cont)
 		col2=Frame(cont)
 		#Enter year
